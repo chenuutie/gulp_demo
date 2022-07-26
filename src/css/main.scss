@@ -2,18 +2,26 @@ $color1:#898000;
 $color2:#000;
 $content-width:1200px;
 
+//bootstrap 變數編譯
+$primary:red;
 
-/* 實際寬度會被padding和border影響,因此加上此段校正 */
-html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-    }
+@import "../../node_modules/bootstrap/scss/bootstrap";
+/*記得檔案位置,從node出發兩層之後src>css */
+
+/* 實際寬度會被padding和border影響,因此加上此段校正 
+   若用bootstrap作業則可去掉,因為它已建好,clearfix亦同  */
+
+   // html {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+//   }
+//   *, *:before, *:after {
+//     -webkit-box-sizing: inherit;
+//     -moz-box-sizing: inherit;
+//     box-sizing: inherit;
+//     }
+
 /* =============================================== */
 /* *{font-family:'Public Sans',sans-serif,serif;} */
 .header {
@@ -47,7 +55,7 @@ html {
     margin-bottom:20px;
     width:100%;
     position:relative;
-    height:80px;
+    
 
     ul{ /* 整體設定 */
         margin:0;
@@ -56,7 +64,7 @@ html {
         list-style-type:none; /* 取消小黑點 */   
         border-top:1px $color1 solid;
         border-bottom:1px $color1 solid;
-        height:82px;
+        
         /* line-height:80px; 我改用flex來設定li置中 */
     
     } 
@@ -317,8 +325,130 @@ html {
    
 }
 
-/*================= Footer ================== */
+/*================= Prouduct content ================== */
 
+ .product_content{
+    margin-bottom: 30px;
+    font-size: 16px;
+    width: 100%;
+    padding-top: 10px;
+    position: relative
+  }
+ .product_content .left{
+    margin-right:300px;
+    //right固定讓left推,圖片另外調
+  }
+ .product_content .left .img_show{
+    background-color: #8A8000;
+    height: 380px;
+    margin-bottom: 12px;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+  /*
+    -webkit-transition: background-image 0.2s;
+    transition: background-image 0.2s;
+  */
+  }
+  .product_content .left .img_list>div{
+    background-color: #8A8000;
+    width: 80px;
+    height: 60px;
+    margin-right: 4px;
+    display: inline-block;
+    background-size : 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .product_content .left .img_list .active{
+    outline: 4px solid #8a8000;
+  }
+ .product_content .right{
+    font-size: 16px;
+    line-height: 20px;
+    position:absolute;
+    top:0;
+    right:0;
+  
+  }
+   .product_content .right .g1{
+    font-size: 24px;
+    line-height: 34px;
+  }
+   .product_content .right .g2{
+    font-size: 24px;
+    line-height: 34px;
+    border-bottom: 2px solid #8A8000;
+    margin-bottom: 18px;
+    display: inline-block;
+    
+  }
+   .product_content .right .g3{
+    font-weight: 400;
+  }
+   .product_content .right .g33{
+    font-weight: 400;
+    margin-top: 25px;
+  }
+  .product_content .right .g4{
+    width: 120px;
+    height: 45px;
+    background-color: #8A8000;
+    border-radius: 13px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 45px;
+    font-size: 22px;
+    margin-top: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block
+  }
+  .product_content .right .g4:hover{
+     background-color: black;
+  }
+
+  .product_content .carousel-item{
+    img{
+        height:400px;
+        object-fit:cover;
+        //自動調整成容器大小,但上下會被裁切到
+    }
+    
+  }
+  
+  #carouselExampleIndicators{
+    button{
+        width:80px;
+
+        &.active img{
+            border:2px solid #898000;
+        }
+
+     }
+
+    }
+    
+    .carousel-indicators{
+     bottom: -30px;
+     justify-content: left;
+     margin-right: 0; 
+     margin-bottom: 0;
+     margin-left: 0; 
+     
+     }
+
+     #info-nav{
+       
+         .nav-link{     
+         color:blue;
+         }
+      
+    }
+  
+/*================= Footer ================== */
+footer{
+    background-color: $color1;
+}
 .flex-nav-bottom{
     max-width: $content-width;
     margin:0 auto;
@@ -327,11 +457,10 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: $color1;
     font-family: 'Public Sans';
     font-weight:400;
     font-style:normal;
-    padding:0 20px;
+    
 
     /* margin:0 auto;
        max-width:___ 也可置中 */
@@ -358,10 +487,7 @@ html {
         display: flex;
         flex-direction: row;
         color:#fff;
-        // margin-left:auto;
-        // margin-right:auto;
-        
-        
+  
     }
 
     li{
@@ -372,7 +498,6 @@ html {
 
 }
 
-
 /*============= RWD ============*/
 @media (max-width:992px){ /*小於992px會執行css*/
     body{
@@ -380,11 +505,11 @@ html {
         width:100%;
     }
     .menu {
-
+    
         ul{
         width:100%;
         flex-direction: column;
-        height:243px;
+    
         }
 
         li:hover{
