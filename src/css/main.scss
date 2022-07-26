@@ -1,5 +1,6 @@
 $color1:#898000;
 $color2:#000;
+$content-width:1200px;
 
 
 /* 實際寬度會被padding和border影響,因此加上此段校正 */
@@ -35,7 +36,7 @@ html {
 }
 
 .main{
-    max-width:1200px;
+    max-width:$content-width;
     margin:0 auto; 
     /* 快速寫法 將block快捷自動置中(0:上下 auto:左右)
        更改div整體範圍 其內容物會在此範圍內 */
@@ -152,7 +153,8 @@ html {
 
 /*=============== Page.About content ================= */
 .content{
-    margin-left:250px;
+    margin:0 auto;
+    max-width: $content-width;
 
     img{
         margin-top:50px;
@@ -318,18 +320,29 @@ html {
 /*================= Footer ================== */
 
 .flex-nav-bottom{
-    width:100%;
+    max-width: $content-width;
+    margin:0 auto;
+    height:135px;
     display: flex;
     flex-direction: row;
-    /* justify-content:space-evenly; */
+    justify-content: space-between;
+    align-items: center;
     background-color: $color1;
     font-family: 'Public Sans';
     font-weight:400;
     font-style:normal;
+    padding:0 20px;
+
+    /* margin:0 auto;
+       max-width:___ 也可置中 */
 
     a{
+        font-size:0.8em;
         text-decoration: none;
         color:#fff;
+    }
+    P{
+        font-size:0.8em;
     }
 
     .bottom-right{
@@ -337,8 +350,7 @@ html {
         display: flex;
         flex-direction: row;
         color:#fff;
-        margin-right:auto;
-        margin-left:auto;
+    
     }
 
     .bottom-left{
@@ -346,8 +358,9 @@ html {
         display: flex;
         flex-direction: row;
         color:#fff;
-        margin-left:auto;
-        margin-right:auto;
+        // margin-left:auto;
+        // margin-right:auto;
+        
         
     }
 
@@ -396,6 +409,14 @@ html {
         font-size:20px;
 
     }
+
+/*================= about ================== */
+     .content{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+     }
+
 /*================= shop ================== */
      
      .shop .product .frame{

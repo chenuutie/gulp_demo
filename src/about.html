@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>此木創遊 The Wood Games</title>
-
-   
-    <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/normalize.css"> 
-    <!-- 針對不同瀏覽器與各版本間不相容的標籤進行些微調整,和reset擇一使用-->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400;700&display=swap" rel="stylesheet">
+@@include('include\head.heml')
 </head>
 
 
@@ -53,21 +32,13 @@
         BoardGameGeek</a> </p>
      <h2>歡迎聯絡我們 Contact us!</h2>   
      <p><a href="mailto:XXXX@gmail.com" target="Blank">XXXX@gmail.com</a> </p>
- </div>
+    </div>
+</div>
 
- <footer>
-    <nav class="flex-nav-bottom">
-     <ul class="bottom-left">
-        <li><a href="#" target="blank">Facebook</a></li>
-        <li><a href="#" target="blank">Twitter</a></li>
-        <li><a href="#" target="blank">Instagram </a></li>
-        <li><a href="#" target="blank">Conatact</a></li>
-        
-     </ul>    
-     <p class="bottom-right">© 2017 此木創遊 The Wood Games</p>    
-    </nav>  
-
+<footer>
+    @@include('include\footer.html')
 </footer>
+
 
 </body>
 
